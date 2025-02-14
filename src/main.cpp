@@ -10,9 +10,12 @@ int main(int argc, char *argv[])
         &engine,
         &QQmlApplicationEngine::objectCreationFailed,
         &app,
-        []() { QCoreApplication::exit(-1); },
+        []()
+        {
+            QCoreApplication::exit(-1);
+        },
         Qt::QueuedConnection);
-    engine.loadFromModule("AzureAIChat", "Main");
+    engine.loadFromModule("com.LFWQSP2641.AzureAIChat", "Main");
 
     return app.exec();
 }
